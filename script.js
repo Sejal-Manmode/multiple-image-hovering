@@ -1,18 +1,9 @@
-const container = document.querySelector("#container");
-const icon = document.querySelector("i");
+const main = document.querySelector("#main");
+const cursor = document.querySelector(".cursor");
 
-container.addEventListener(
-    "dblclick",
-    function(){
-        icon.style.transform = 'translate(-50%, -50%) scale(1)';
-        icon.style.opacity = 0.8;
-
-        setTimeout(function(){
-        icon.style.opacity = 0;
-        },1000);
-
-        setTimeout(function(){
-        icon.style.transform = 'translate(-50%, -50%) scale(0)';
-        },2000);
+main.addEventListener(
+    "mousemove", function(info){
+        cursor.style.left = info.x + "px";
+        cursor.style.top = info.y + "px";
     }
 )
